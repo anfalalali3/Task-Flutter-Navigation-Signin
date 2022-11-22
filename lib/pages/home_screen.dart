@@ -58,7 +58,12 @@ class HomeScreen extends StatelessWidget {
                   MaterialStateProperty.all<Color>(Colors.deepPurpleAccent),
             ),
             onPressed: () {
-              // Step 8
+              if (passwordController == "12345") {
+                print("success");
+                context.push("/signin", extra: usernameController.text);
+              } else {
+                print("fail");
+              }
             },
             child: const Padding(
               padding: EdgeInsets.all(8.0),
